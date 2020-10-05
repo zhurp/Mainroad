@@ -39,6 +39,9 @@
 	{{- if not .Site.IsServer }}
 		{{ template "_internal/google_analytics_async.html" . }}
 	{{- end }}
+	
+	<script src="{{ site.Params.jQueryPath }}" integrity="{{ site.Params.jQueryInt }}" crossorigin="{{ site.Params.jQueryCO }}"></script>
+	<link href="{{ site.Params.fontAwesomePath }}" rel="stylesheet">
 </head>
 <body class="body">
 	<div class="container container--outer">
@@ -56,6 +59,9 @@
 			{{ partial "sidebar.html" . }}
 		</div>
 		{{ partial "footer" . }}
+	</div>
+	<div id="return-to-top">
+		<i class="fas fa-chevron-up"></i>
 	</div>
 <script async defer src="{{ "js/menu.js" | relURL }}"></script>
 {{ range .Site.Params.customJS -}}
