@@ -2,4 +2,13 @@
 <section class="comments">
 	{{ template "_internal/disqus.html" . }}
 </section>
+{{ else if $.Site.Params.useUtterances }}
+<script src={{ $.Site.Params.utterPath }}
+        repo={{ $.Site.Params.utterRepo }}
+        issue-term="pathname"
+        label="Utteranc Comments"
+        theme={{ $.Site.Params.utterTheme }}
+        crossorigin="anonymous"
+        async>
+</script>
 {{ end }}
